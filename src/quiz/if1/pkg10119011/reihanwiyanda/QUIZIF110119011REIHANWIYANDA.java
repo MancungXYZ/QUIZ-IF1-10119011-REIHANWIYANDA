@@ -38,8 +38,8 @@ public class QUIZIF110119011REIHANWIYANDA {
         System.out.print("Are you Member(Yes/No) :");
         plgn.setMember(sp.checkMemberStatus(sc.next()));
         
-        System.out.println("#****************************#");
-        System.out.println("#******Customer Invoice******#");
+        System.out.println("#******************************#");
+        System.out.println("#*******Customer Invoice*******#");
         System.out.println("Date Transaction : " + plgn.currentTime());
         System.out.println("Service Price : " + sp.getPriceService());
         System.out.println("Discount : " + sp.getSale(plgn.isMember(), sp.getPriceService()));
