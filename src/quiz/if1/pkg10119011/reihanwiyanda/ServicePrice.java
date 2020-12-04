@@ -29,22 +29,44 @@ public class ServicePrice implements ServiceItem {
         System.out.println("2. Haircut + Hairwash: IDR 55K");
         System.out.println("3. Hairwash Only : IDR 15K");
         System.out.println("#*************************#");
+        System.out.print("Choose (1/2/3) : ");
+        
     }
     
 
     @Override
     public boolean checkMemberStatus(String statusMember) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean member = false;
+        if (statusMember.toUpperCase().equals("yes")) {
+            return member = true;
+        }
+        return member;
     }
 
     @Override
     public float getSale(boolean isMember, float parServicePrice) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (isMember) {
+            return (float) (parServicePrice * 0.1);
+        }
+        return parServicePrice;
     }
 
     @Override
     public float getPrice(int serviceItem) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        switch (serviceItem) {
+            case 1 : priceService = 45000;
+                     break;
+            case 2 : priceService = 55000;
+                     break;
+            case 3 : priceService = 15000;
+                     break;
+            default: priceService = 0;
+        }
+        return priceService;
+    }
+    
+    public float getTotalPay (float priceService, float discount) {
+        return priceService - discount;
     }
         
 }

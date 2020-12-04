@@ -5,6 +5,8 @@
  */
 package quiz.if1.pkg10119011.reihanwiyanda;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -41,7 +43,9 @@ public class Customer implements CustomerInvoice {
 
     @Override
     public String currentTime() {
-       return "Hari ini tanggal 27 November 2020";
+       Date waktu = new Date ();
+       DateFormat dateFormat = new SimpleDateFormat("EEEE, dd MMM yyyy hh:mm:ss");
+       return dateFormat.format(waktu);
 
     }
     
